@@ -2,10 +2,16 @@ import 'package:bmi_calculator/core/theme/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, this.onTap, required this.text});
+  const CustomButton({
+    super.key,
+    this.onTap,
+    required this.text,
+    this.height = 70,
+  });
 
   final void Function()? onTap;
   final String text;
+  final double height;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +21,7 @@ class CustomButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: double.infinity,
-        height: 70,
+        height: height,
         margin: const EdgeInsets.symmetric(horizontal: 10),
         clipBehavior: Clip.antiAlias,
         decoration: ShapeDecoration(

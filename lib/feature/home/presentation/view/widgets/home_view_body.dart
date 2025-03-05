@@ -16,7 +16,6 @@ class HomeViewBody extends StatefulWidget {
 
 class _HomeViewBodyState extends State<HomeViewBody> {
   bool isMale = true;
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -59,7 +58,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
           ),
           const SizedBox(height: 60),
           CustomButton(onTap: () {
-            Navigator.pushNamed(context, PageRouteName.calculator);
+            Navigator.pushNamed(context, PageRouteName.calculator,arguments: isMale);
           }, text: 'Continue'),
         ],
       ),

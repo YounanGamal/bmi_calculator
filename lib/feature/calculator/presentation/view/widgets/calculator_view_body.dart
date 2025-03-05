@@ -18,10 +18,11 @@ class _CalculatorViewBodyState extends State<CalculatorViewBody> {
   int selectedValue = 100;
   int numberWeight = 20;
   int numberAge = 10;
-  String gender = '';
 
   @override
   Widget build(BuildContext context) {
+    var isMale = ModalRoute.of(context)?.settings.arguments as bool;
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10.0),
       child: Column(
@@ -102,10 +103,14 @@ class _CalculatorViewBodyState extends State<CalculatorViewBody> {
                 builder: (BuildContext context) {
                   return CustomDialog(
                     height: selectedValue,
-                    bmi: double.parse((numberWeight / (selectedValue/100 * selectedValue/100)).toStringAsFixed(1)),
+                    bmi: double.parse(
+                      (numberWeight /
+                              (selectedValue / 100 * selectedValue / 100))
+                          .toStringAsFixed(1),
+                    ),
                     weight: numberWeight,
                     age: numberAge,
-                    gender: 'male',
+                    gender: isMale ? 'male' : 'female',
                   );
                 },
               );
@@ -115,5 +120,4 @@ class _CalculatorViewBodyState extends State<CalculatorViewBody> {
       ),
     );
   }
-
 }
