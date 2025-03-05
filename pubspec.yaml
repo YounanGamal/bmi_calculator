@@ -1,0 +1,69 @@
+name: bmi_calculator
+description: "A new Flutter project."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.0
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons: ^1.0.8
+  flutter_svg: ^2.0.17
+  simple_ruler_picker: ^0.1.1
+  flutter_native_splash: ^2.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+  flutter_launcher_icons: ^0.14.1
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/icon_app.jpg"
+  min_sdk_android: 21
+  adaptive_icon_foreground: "assets/images/icon_app.jpg"
+  adaptive_icon_background: "#ffffff"
+
+  flutter_lints: ^5.0.0
+
+
+flutter:
+
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+
+  fonts:
+     - family: Roboto
+       fonts:
+         - asset: assets/font/Roboto-Bold.ttf
+           weight: 700
+         - asset: assets/font/Roboto-SemiBold.ttf
+           weight: 600
+         - asset: assets/font/Roboto-Medium.ttf
+           weight: 500
+
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/images/icon_app.jpg
+  color_dark: "#ffffff"
+  image_dark: assets/images/icon_app.jpg
+
+  android_12:
+    image: assets/images/icon_app.jpg
+    icon_background_color: "#ffffff"
+    image_dark: assets/images/icon_app.jpg
+    icon_background_color_dark: "#ffffff"
