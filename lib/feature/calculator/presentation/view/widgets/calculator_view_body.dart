@@ -1,5 +1,6 @@
 import 'package:bmi_calculator/core/theme/app_colors.dart';
 import 'package:bmi_calculator/core/theme/text_styles.dart';
+import 'package:bmi_calculator/feature/calculator/presentation/view/widgets/custom_dialog.dart';
 import 'package:bmi_calculator/feature/calculator/presentation/view/widgets/custom_widget.dart';
 import 'package:bmi_calculator/feature/calculator/presentation/view/widgets/height_card.dart';
 import 'package:bmi_calculator/feature/home/presentation/view/widgets/custom_app_bar.dart';
@@ -17,6 +18,7 @@ class _CalculatorViewBodyState extends State<CalculatorViewBody> {
   int selectedValue = 100;
   int numberWeight = 20;
   int numberAge = 10;
+  String gender = '';
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,9 @@ class _CalculatorViewBodyState extends State<CalculatorViewBody> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context);
+                },
                 icon: Icon(Icons.arrow_back_ios, color: AppColors.primaryColor),
               ),
               Expanded(
@@ -90,9 +94,26 @@ class _CalculatorViewBodyState extends State<CalculatorViewBody> {
             },
           ),
           SizedBox(height: 50),
-          CustomButton(text: 'Calculator', onTap: () {}),
+          CustomButton(
+            text: 'Calculator',
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return CustomDialog(
+                    height: selectedValue,
+                    bmi: double.parse((numberWeight / (selectedValue/100 * selectedValue/100)).toStringAsFixed(1)),
+                    weight: numberWeight,
+                    age: numberAge,
+                    gender: 'male',
+                  );
+                },
+              );
+            },
+          ),
         ],
       ),
     );
   }
+
 }

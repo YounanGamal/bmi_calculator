@@ -36,17 +36,22 @@ abstract class TextStyles {
     fontWeight: FontWeight.bold,
     fontSize: 38,
   );
+  static const TextStyle bold55 = TextStyle(
+    fontFamily: 'Roboto',
+    fontWeight: FontWeight.bold,
+    fontSize: 55,
+  );
 
   // SemiBold
-  static const TextStyle semiBold11 = TextStyle(
+  static const TextStyle semiBold20 = TextStyle(
     fontFamily: 'Roboto',
     fontWeight: FontWeight.w600,
-    fontSize: 11,
+    fontSize: 20,
   );
-  static const TextStyle semiBold13 = TextStyle(
+  static const TextStyle semiBold14 = TextStyle(
     fontFamily: 'Roboto',
     fontWeight: FontWeight.w600,
-    fontSize: 13,
+    fontSize: 14,
   );
   static const TextStyle semiBold32 = TextStyle(
     fontFamily: 'Roboto',
