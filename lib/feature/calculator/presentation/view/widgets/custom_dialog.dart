@@ -150,7 +150,8 @@ class CustomDialog extends StatelessWidget {
                     ),
                   ),
                   TextSpan(
-                    text: '${calculateMinWeight(height)} kg - ${calculateMaxWeight(height)} kg',
+                    text:
+                        '${calculateMinWeight(height)} kg - ${calculateMaxWeight(height)} kg',
                     style: TextStyles.medium16.copyWith(
                       color: Color(0xFF519234),
                       height: 1.5,
@@ -160,7 +161,7 @@ class CustomDialog extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-             SizedBox(height: media.height*0.02),
+            SizedBox(height: media.height * 0.02),
             CustomButton(
               height: 55,
               text: 'Close',
@@ -187,6 +188,7 @@ class CustomDialog extends StatelessWidget {
     if (bmi < 30) return Colors.orange;
     return Colors.red;
   }
+
   double calculateMinWeight(int height) {
     double heightInMeters = height / 100;
     double minWeight = 18.5 * (heightInMeters * heightInMeters);
@@ -198,6 +200,4 @@ class CustomDialog extends StatelessWidget {
     double maxWeight = 24.9 * (heightInMeters * heightInMeters);
     return double.parse(maxWeight.toStringAsFixed(1));
   }
-
-
 }

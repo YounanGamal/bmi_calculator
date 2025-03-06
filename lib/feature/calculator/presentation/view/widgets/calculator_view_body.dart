@@ -59,7 +59,9 @@ class _CalculatorViewBodyState extends State<CalculatorViewBody> {
                 number: numberWeight,
                 onTapMinus: () {
                   setState(() {
-                    numberWeight--;
+                    if (numberWeight > 20) {
+                      numberWeight--;
+                    }
                   });
                 },
                 onTapPlus: () {
@@ -74,7 +76,9 @@ class _CalculatorViewBodyState extends State<CalculatorViewBody> {
                 number: numberAge,
                 onTapMinus: () {
                   setState(() {
-                    numberAge--;
+                    if (numberAge > 10) {
+                      numberAge--;
+                    }
                   });
                 },
                 onTapPlus: () {
